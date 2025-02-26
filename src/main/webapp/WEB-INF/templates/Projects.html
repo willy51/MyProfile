@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Projets</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        ul { list-style: none; padding: 0; }
+        li { margin: 10px 0; }
+    </style>
+</head>
+<body>
+<h1>Liste des Projets</h1>
+<ul>
+    <li th:each="projet : ${projets}">
+        <strong th:text="${projet.titre}"></strong> -
+        <span th:text="${projet.description}"></span>
+        (<a th:href="${projet.lien}" target="_blank">Voir</a>)
+    </li>
+</ul>
+</body>
+</html>
