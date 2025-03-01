@@ -2,7 +2,7 @@
 
 ## 📌 About the Project
 **MyProfile** is a personal portfolio website that showcases my skills, projects, and courses.  
-It is built using **Java Servlets** for the backend, connects to an **API developed in NestJS**, and stores data in a **PostgreSQL database**.
+It is built using Java Servlets for the backend, connects to an API developed in NestJS, and stores data in a PostgreSQL database.
 
 ## 🌟 Features
 - 🏗 **Personal Portfolio** – Displays my projects and experiences.
@@ -10,8 +10,6 @@ It is built using **Java Servlets** for the backend, connects to an **API develo
 - 📅 **Projects Sorted by Year** – Organized for easy viewing.
 - 🔒 **Database Storage** – Uses PostgreSQL to store project details.
 - 📱 **Responsive Design** – Optimized for desktop and mobile.
-
----
 
 ## 🛠️ Technologies Used
 ### **Backend**
