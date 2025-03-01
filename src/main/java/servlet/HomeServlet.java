@@ -1,4 +1,6 @@
 package servlet;
+import dao.CourseDAO;
+import entities.Course;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -10,6 +12,8 @@ import org.thymeleaf.templateresolver.WebApplicationTemplateResolver;
 import org.thymeleaf.web.servlet.JakartaServletWebApplication;
 
 import java.io.IOException;
+import java.util.Comparator;
+import java.util.List;
 
 
 @WebServlet("/home")
@@ -27,6 +31,9 @@ public class HomeServlet extends HttpServlet {
 
         WebContext context = new WebContext(application.buildExchange(req, resp));
 
+        List<Course> courses = CourseDAO.getParcours();
+        courses.sort(Comparator.comparing(Course::getDateDebut).reversed());
+        context.setVariable("courses", courses);
 
         engine.process("Home", context, resp.getWriter());
     }

@@ -1,23 +1,44 @@
 <!DOCTYPE html>
-<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="/css/Web.css">
+<link rel="icon" href="/images/icon.png" type="image/x-icon" />
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des Projets</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        ul { list-style: none; padding: 0; }
-        li { margin: 10px 0; }
-    </style>
+    <title>My Profile</title>
 </head>
 <body>
-<h1>Liste des Projets</h1>
-<ul>
-    <li th:each="projet : ${projets}">
-        <strong th:text="${projet.titre}"></strong> -
-        <span th:text="${projet.description}"></span>
-        (<a th:href="${projet.lien}" target="_blank">Voir</a>)
-    </li>
-</ul>
+<div th:replace="~{Header :: header(page='projects')}"></div>
+
+    <h1 class="section-title">Projects</h1>
+
+    <div class="project-steps">
+        <div class="step-card" th:each="projet : ${projets}">
+            <th:block th:if="${#strings.startsWith(projet.lien, 'http')}">
+                <a th:href="${projet.lien}" target="_blank" class="step-link">
+                    <div class="step-content">
+                        <h2 th:text="${projet.titre}"></h2>
+                        <span class="date" th:text="${projet.dateCreation}"></span>
+                        <p th:text="${projet.description}"></p>
+                    </div>
+                </a>
+            </th:block>
+
+            <th:block th:if="${not #strings.startsWith(projet.lien, 'http')}">
+                <a>
+                    <div class="step-content">
+                        <h2 th:text="${projet.titre}"></h2>
+                        <span class="date" th:text="${projet.dateCreation}"></span>
+                        <p th:text="${projet.description}"></p>
+                    </div>
+                </a>
+
+            </th:block>
+
+        </div>
+    </div>
+
 </body>
+
+<div th:replace="~{Footer :: footer}"></div>
+
 </html>

@@ -1,10 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" type="text/css" href="/css/Web.css">
+<link rel="icon" href="/images/icon.png" type="image/x-icon" />
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>My Profile</title>
 </head>
 <body>
+<th:block th:with="page='about'"></th:block>
+<div th:replace="~{Header :: header(page='about')}"></div>
 
+<h1 class="section-title">About Me</h1>
+
+<div class="about-content">
+    <div id="aboutMe">
+        <h1>Who am I ?</h1>
+        <p>Hi! I’m Willy Zheng, a final-year Computer Engineering student at JUNIA HEI. Passionate about IT, I enjoy exploring and implementing innovative solutions across software development, network administration, and system infrastructure.
+            With hands-on experience in application development, database management, IT security, and network administration, I am always eager to learn, improve, and take on new challenges in the ever-evolving tech landscape.
+        </p>
+    </div>
+
+    <div id="mySkills">
+        <h2>My Skills</h2>
+
+        <div class="skills-container">
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="/images/skills/backend-icon.png" alt="Backend Icon">
+                </div>
+                <h3 class="skill-title">Back-end</h3>
+                <p class="skill-description">Java (J2EE, Spring), Python, NestJS, C++</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="/images/skills/frontend-icon.png" alt="Frontend Icon">
+                </div>
+                <h3 class="skill-title">Front-end</h3>
+                <p class="skill-description">Kotlin, Flutter, HTML, CSS</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="/images/skills/database-icon.png" alt="Database Icon">
+                </div>
+                <h3 class="skill-title">Databases</h3>
+                <p class="skill-description">SQL – management & optimization</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="/images/skills/devops-icon.png" alt="DevOps Icon">
+                </div>
+                <h3 class="skill-title">DevOps</h3>
+                <p class="skill-description">Docker, Active Directory, Git</p>
+            </div>
+        </div>
+
+        <h2>Soft Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="/images/soft-skills/teamwork.png" alt="Teamwork Icon">
+                </div>
+                <h3 class="skill-title">Teamwork</h3>
+                <p class="skill-description">Effective collaboration in projects</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="/images/soft-skills/problem-solving.png" alt="Problem Solving Icon">
+                </div>
+                <h3 class="skill-title">Problem-solving</h3>
+                <p class="skill-description">Analytical mindset to tackle challenges</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="/images/soft-skills/communication.png" alt="Communication Icon">
+                </div>
+                <h3 class="skill-title">Communication</h3>
+                <p class="skill-description">Clear and structured interaction with teams</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="/images/soft-skills/adaptability.png" alt="Adaptability Icon">
+                </div>
+                <h3 class="skill-title">Adaptability</h3>
+                <p class="skill-description">Quick learning and flexibility in new environments</p>
+            </div>
+        </div>
+
+        <h2>My Certifications</h2>
+        <div class="certifications-container">
+            <div class="certification-card">
+                <a href="https://www.hackerrank.com/profile/willyzheng7" target="_blank">
+                    <div class="skill-icon">
+                        <img src="/images/hackerrank.svg" alt="HackerRank Logo">
+                    </div>
+                    <h3 class="skill-title">Hacker Rank</h3>
+                </a>
+            </div>
+
+            <div class="certification-card">
+                <a href="https://www.root-me.org/Winox?lang=fr#9b255e2222ec93907e4cd67895bdb599" target="_blank">
+                    <div class="skill-icon">
+                        <img src="/images/rootme.svg" alt="Root Me Logo">
+                    </div>
+                    <h3 class="skill-title">Root Me</h3>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="languages">
+        <h2>Languages</h2>
+        <div class="languages-container">
+            <div class="language">
+                <svg viewBox="0 0 100 100" class="progress-circle">
+                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                    <circle class="progress french" cx="50" cy="50" r="45"></circle>
+                    <text x="50" y="55" text-anchor="middle">100%</text>
+                </svg>
+                <span>French: Native</span>
+            </div>
+
+            <div class="language">
+                <svg viewBox="0 0 100 100" class="progress-circle">
+                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                    <circle class="progress english" cx="50" cy="50" r="45"></circle>
+                    <text x="50" y="55" text-anchor="middle">80%</text>
+                </svg>
+                <span>English: Fluent</span>
+            </div>
+
+            <div class="language">
+                <svg viewBox="0 0 100 100" class="progress-circle">
+                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                    <circle class="progress chinese" cx="50" cy="50" r="45"></circle>
+                    <text x="50" y="55" text-anchor="middle">40%</text>
+                </svg>
+                <span>Chinese: Intermediate</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="interest">
+        <h2>Interest</h2>
+        <ul>
+            <li><strong>Drawing: </strong> I love expressing my creativity through illustrations.</li>
+            <li><strong>Cooking & Nutrition: </strong> Passionate about food and well-being, I love exploring healthy recipes and learning about nutrition.</li>
+            <li><strong>Tennis: </strong> Former member of the Cormontreuil Tennis Club (2013-2020), I enjoy staying active.</li>
+            <li><strong>Asian Culture: </strong> Enthusiast of cinema, literature, and anime.</li>
+            <li><strong>Technology & Programming: </strong> Always excited about coding, problem-solving, and staying updated on tech trends.</li>
+            <li><strong>Lifelong Learning: </strong> Curious by nature, I constantly seek to learn new things, whether through books, online courses, or hands-on experiences.</li>
+        </ul>
+    </div>
+</div>
 </body>
+<div th:replace="~{Footer :: footer}"></div>
 </html>
