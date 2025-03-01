@@ -34,7 +34,9 @@ public class ProjectDAO {
                         jsonProjet.getInt("id"),
                         jsonProjet.getString("titre"),
                         jsonProjet.getString("description"),
-                        jsonProjet.getString("lien")
+                        jsonProjet.optString("date_creation", "N/A"),
+                        jsonProjet.optString("lien", "#"),
+                        null
                 );
                 projets.add(projet);
             }

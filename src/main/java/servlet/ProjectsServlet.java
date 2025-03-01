@@ -1,6 +1,7 @@
 package servlet;
 
 import dao.ProjectDAO;
+import entities.Course;
 import entities.Project;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -13,6 +14,7 @@ import org.thymeleaf.templateresolver.WebApplicationTemplateResolver;
 import org.thymeleaf.web.servlet.JakartaServletWebApplication;
 
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.List;
 
 @WebServlet("/projects")
@@ -33,8 +35,8 @@ public class ProjectsServlet extends HttpServlet {
         WebContext context = new WebContext(application.buildExchange(req, resp));
 
         List<Project> projets = projectDAO.getProjets();
+        projets.sort(Comparator.comparing(Project::getDateCreation).reversed());
         context.setVariable("projets", projets);
-
         engine.process("Projects", context, resp.getWriter());
     }
 }

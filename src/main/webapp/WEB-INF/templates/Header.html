@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/Web.css">
+</head>
+<body>
 <header>
     <nav>
         <ul>
-            <li><a href="/home">Accueil</a></li>
-            <li><a href="/projects">Projets</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li th:class="${page == 'home' ? 'active' : ''}">
+                <a href="/home">Home</a>
+            </li>
+            <li th:class="${page == 'projects' ? 'active' : ''}">
+                <a href="/projects">Projects</a>
+            </li>
+            <li th:class="${page == 'about' ? 'active' : ''}">
+                <a href="/about">About</a>
+            </li>
+            <li th:class="${page == 'contact' ? 'active' : ''}">
+                <a href="/contact">Contact</a>
+            </li>
+
         </ul>
     </nav>
 </header>
-
+</body>
+</html>

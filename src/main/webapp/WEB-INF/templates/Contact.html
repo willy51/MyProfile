@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<link rel="stylesheet" type="text/css" href="/css/Web.css">
+<link rel="icon" href="/images/icon.png" type="image/x-icon" />
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>My Profile</title>
 </head>
-<body>
 
+<body>
+<div th:replace="~{Header :: header(page='contact')}"></div>
+
+<h1 class="section-title">Get in Touch</h1>
+<div class="contact-section">
+    <p>If you’d like to connect, collaborate, or just ask a question, feel free to send me an email. I’d be happy to hear from you!</p>
+    <div class="contact-info">
+        <img src="/images/mail.png" alt="Picture of me">
+        <script language="JavaScript">utilisateur = 'willyzheng' ; domaine = 'hotmail.fr' ; document.write('<a class="animated-links-contact" title="Send a mail to Willy ZHENG" href=\"mailto:' + utilisateur + '@' + domaine + '\">') ; document.write(utilisateur + '@' + domaine + '</a>');</script>
+    </div>
+</div>
 </body>
+<div th:replace="~{Footer :: footer}"></div>
 </html>

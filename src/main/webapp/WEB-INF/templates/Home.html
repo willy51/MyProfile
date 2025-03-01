@@ -1,11 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="icon" href="/images/icon.png" type="image/x-icon" />
 <head>
     <meta charset="UTF-8">
-    <title>Hello World</title>
+    <title>My Profile</title>
+    <link rel="stylesheet" type="text/css" href="/css/Web.css">
 </head>
-<div th:insert="~{Header :: header}"></div>
-<body>
-  <h1>Hello World</h1>
+
+<body class="body">
+
+<div th:replace="~{Header :: header(page='home')}"></div>
+
+<h1 class="section-title">Courses</h1>
+<div class="timeline-container">
+    <div th:each="course, iterStat : ${courses}"
+         th:class="${iterStat.odd} ? 'timeline-block timeline-block-right' : 'timeline-block timeline-block-left'">
+        <div class="marker"></div>
+        <div class="timeline-header">
+            <h3 th:text="${course.titre}"></h3>
+            <span th:text="${course.dateDebut} + '-' + ${course.dateFin} "></span>
+        </div>
+        <div class="timeline-content">
+            <p th:text="${course.description}"></p>
+            <h4>Related projects:</h4>
+            <ul>
+                <li th:each="projet : ${course.projects}">
+                    <span th:text="${projet.titre}"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 </body>
+
+<div th:replace="~{Footer :: footer}"></div>
+
 </html>
