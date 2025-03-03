@@ -23,6 +23,10 @@ public class ProjectsServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html; charset=UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+        resp.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
+        resp.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
         JakartaServletWebApplication application = JakartaServletWebApplication.buildApplication(req.getServletContext());
         WebApplicationTemplateResolver templateResolver = new WebApplicationTemplateResolver(application);
         templateResolver.setPrefix("/WEB-INF/templates/");

@@ -323,7 +323,7 @@ footer {
 
 .about-content div {
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 15px;
     padding: 25px;
@@ -387,6 +387,26 @@ footer {
     margin: 20px auto;
     max-width: 1100px;
     box-shadow: none !important;
+}
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+
+.skill-cardAdmin{
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    grid-column: 2 / span 2;
+    justify-self: center;
 }
 
 .skill-card {
