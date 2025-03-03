@@ -391,6 +391,11 @@ footer {
     box-shadow: none !important;
 }
 
+.skill-cardAdmin {
+    grid-column: 2 / span 2; /* Centre la carte sur la ligne */
+    justify-self: center;
+}
+
 .skill-card {
     background: white;
     padding: 25px;
