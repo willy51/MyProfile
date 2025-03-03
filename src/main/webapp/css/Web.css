@@ -19,6 +19,7 @@ body {
 .project-steps,
 .about-content,
 .timeline-block,
+.contact-section,
 footer{
     opacity: 0;
     transform: translateY(50px);
@@ -30,6 +31,7 @@ footer{
 }
 
 .project-steps,
+.contact-section,
 .about-content,
 .timeline-container{
     animation-delay: 0.6s;
@@ -323,7 +325,7 @@ footer {
 
 .about-content div {
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 15px;
     padding: 25px;
@@ -678,3 +680,4 @@ text {
 .contact-info a:hover {
     text-decoration: underline;
 }
+
