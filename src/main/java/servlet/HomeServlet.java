@@ -36,7 +36,7 @@ public class HomeServlet extends HttpServlet {
         WebContext context = new WebContext(application.buildExchange(req, resp));
 
         List<Course> courses = CourseDAO.getParcours();
-        courses.sort(Comparator.comparing(Course::getDateDebut).reversed());
+        courses.sort(Comparator.comparing(Course::getDateFin).reversed());
         context.setVariable("courses", courses);
 
         engine.process("Home", context, resp.getWriter());

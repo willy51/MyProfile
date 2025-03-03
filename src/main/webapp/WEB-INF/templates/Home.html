@@ -11,7 +11,7 @@
 
 <div th:replace="~{Header :: header(page='home')}"></div>
 
-<h1 class="section-title">Courses</h1>
+<h1 class="section-title">Professional & Academic Background</h1>
 <div class="timeline-container">
     <div th:each="course, iterStat : ${courses}"
          th:class="${iterStat.odd} ? 'timeline-block timeline-block-right' : 'timeline-block timeline-block-left'">
