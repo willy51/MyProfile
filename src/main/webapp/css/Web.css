@@ -20,6 +20,7 @@ body {
 .about-content,
 .timeline-block,
 .contact-section,
+.gallery,
 footer{
     opacity: 0;
     transform: translateY(50px);
@@ -33,6 +34,7 @@ footer{
 .project-steps,
 .contact-section,
 .about-content,
+.gallery,
 .timeline-container{
     animation-delay: 0.6s;
 }
@@ -690,4 +692,37 @@ text {
 
 .contact-info a:hover {
     text-decoration: underline;
+}
+
+/* Drawings */
+.gallery {
+    column-count: 3;
+    column-gap: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.gallery img {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        column-count: 1;
+    }
 }

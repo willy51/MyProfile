@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="/css/Web.css">
+<link rel="icon" href="/images/icon.png" type="image/x-icon" />
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+</head>
+<body>
+<th:block th:with="page='about'"></th:block>
+<div th:replace="~{Header :: header(page='about')}"></div>
+
+
+<section class="gallery">
+    <img src="/images/drawings/Ai.png" alt="AI Drawing">
+    <img src="/images/drawings/Furina.jpg" alt="Furina Drawing">
+    <img src="/images/drawings/Hero.jpg" alt="Hero Drawing">
+    <img src="/images/drawings/Mage.png" alt="Mage Drawing">
+    <img src="/images/drawings/MrSausage.jpg" alt="Mr Sausage Drawing">
+    <img src="/images/drawings/RedrawChallenge.png" alt="Redraw Challenge Drawing">
+</section>
+
+
+
+</body>
+<div th:replace="~{Footer :: footer}"></div>
+</html>
